@@ -38,7 +38,8 @@
 \addtobeamertemplate{title page}{
 	\vskip -6pt
 	\begin{beamercolorbox}[wd=\paperwidth,ht=1.06\beamer@headheight]{Title bar}
-	  \hfill \pgfuseimage{wehi_logo_reverse} \hspace{0.5cm} 
+	\vspace{0.2cm}
+	  \hspace{0.2cm}  \pgfuseimage{wehi_logo_reverse}
   \end{beamercolorbox}
 
 }
@@ -75,7 +76,9 @@
   \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.3\beamer@headheight,sep=0.1cm]{Location bar}
     \usebeamerfont{section in head/foot}%
     \insertshortauthor~|~\insertshorttitle 
-   %\hfill \pgfuseimage{wehi_logo_reverse_small} \hspace{0.25cm} 
+   \hspace{1.5cm} \includegraphics[width=0.018\textwidth]{twitter} \hspace{0.05cm} 
+	\includegraphics[width=0.018\textwidth]{github} \hspace{0.05cm} 
+	{\color{white} goknurginer}
     \hfill \insertframenumber%/\inserttotalframenumber
   \end{beamercolorbox}}
 }
