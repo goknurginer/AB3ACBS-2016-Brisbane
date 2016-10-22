@@ -13,6 +13,8 @@
 *.pdf
 *.ai
 *.pptx
+*.RData
+*.png
 
 ## Intermediate documents:
 *.dvi
