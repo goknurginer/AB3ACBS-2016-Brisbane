@@ -1,0 +1,105 @@
+\documentclass[9pt,t]{beamer}
+\usetheme{PastelGG}
+\usepackage{tikz}
+\usepackage{amsthm,amsmath,amsfonts,mathbbol,mathrsfs,stmaryrd,textcomp}
+
+
+%%-----------------------------------------------------------------------
+%% Add a progress bar in footline
+%% http://www.mrunix.de/forums/showpost.php?p=316577&postcount=3
+%% ----------------------------------------------------------------------
+\definecolor{lightgr}{rgb}{0.8235294117647058 0.615686274509804 0.6980392156862745}
+\makeatletter
+\addtobeamertemplate{footline}{%
+  \color{lightgr}% to color the progressbar
+  \hspace*{-\beamer@leftmargin}%
+  \rule{\beamer@leftmargin}{2pt}%
+  \rlap{\rule{\dimexpr
+      \beamer@startpageofframe\dimexpr
+      \beamer@rightmargin+\textwidth\relax/\beamer@endpageofdocument}{1pt}}
+  % next 'empty' line is mandatory!
+
+  \vspace{0\baselineskip}
+  {}
+}
+
+\title{FRY: A Fast Approximation to ROAST Gene Set Test with Mean Aggregated Set Statistics}
+\author[G\"{o}knur Giner]{Goknur Giner}
+\date[November 1st, 2016]{November 1st, 2016,\\
+AB$^3$ACBS Conference, Brisbane, AU}
+
+
+\begin{document}
+
+\begin{frame}[plain,t]
+	\titlepage
+\end{frame}
+
+\section{Introduction}
+\begin{frame}[c]
+	\frametitle{Differential Expression Analysis}
+	\vspace{0.2cm}
+\begin{columns}
+	\column{0.5\textwidth}
+	\textbf{\color{oxygenpurple} Extract mRNA and turn into cDNA}
+\begin{minipage}[c][0.35\textheight][c]{\linewidth}
+  \includegraphics[width=1\linewidth]{figures/de1_no_title}
+\end{minipage}
+ 	\visible<2->{\textbf{\color{oxygenpurple} Sequence the fragments}
+\begin{minipage}[c][0.25\textheight][c]{\linewidth}
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/de2_no_title}
+\end{minipage}}
+	\visible<3->{
+	\textbf{\color{oxygenpurple} Align reads to the reference genome}
+\begin{minipage}[c][0.3\textheight][c]{\linewidth}
+  \includegraphics[width=1\linewidth]{figures/de3_no_title}
+\end{minipage}}
+	\column{0.5\textwidth}
+	\vspace{0.2cm}
+ 	\visible<4->{
+	\textbf{\color{oxygenpurple} Construct gene counts and count matrix}
+\begin{minipage}[c][0.25\textheight][c]{\linewidth}
+ 	\centering
+  \includegraphics[width=1.1\linewidth]{figures/de4_no_title}
+\end{minipage}}
+ 	\visible<5->{
+	\textbf{\color{oxygenpurple} Differential expression analysis}
+\begin{minipage}[c][0.85\textwidth][c]{\linewidth}
+  	\centering
+  \includegraphics[width=0.85\linewidth]{figures/de5_no_title}
+\end{minipage}}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{A Collection of Genes}
+\begin{columns}
+	\column{0.5\textwidth}
+	\vspace{0.2cm}
+\begin{minipage}[c][1\textheight][c]{\linewidth}
+ 	\centering
+  \includegraphics[width=1\linewidth]{figures/de4_no_title}
+\end{minipage}
+	\column{0.5\textwidth}
+	\vspace{0.2cm}
+\begin{minipage}[c][1\textheight][c]{\linewidth}
+ 	\centering
+  \includegraphics[width=1\linewidth]{figures/de4_no_title}
+\end{minipage}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gene Set Tests}
+	\vspace{2cm}
+	{\color{oxygenpurple}\textbf{Biologists want to:}}\\
+	\vspace{0.4cm}
+\begin{itemize}
+	\item Assemble a summary of the most enriched biology
+	\item Understand if the biological pathway of interest is changed in a given experiment
+\end{itemize}
+\end{frame}
+
+\end{document}
+
