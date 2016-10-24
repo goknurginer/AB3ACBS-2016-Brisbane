@@ -221,7 +221,7 @@ AB$^3$ACBS Conference, Brisbane, AU}
 	\end{itemize}
 \end{minipage}
 \begin{minipage}[t][][b]{0.54\textwidth}
-	\includegraphics[width=1\textwidth]{figures/barcodeplot}
+	\includegraphics[width=1.1\textwidth]{figures/barcode_plot}
 \end{minipage}
 \end{frame}
 
@@ -229,34 +229,57 @@ AB$^3$ACBS Conference, Brisbane, AU}
 \frametitle{Downsides of Roast}
 Limitations when analysing large collections of sets\\
 \vfill
- \textbf{\color{oxygenpurple} P-value resolution is limited by the number of rotations}\\
+ \uncover<2-4>{\textbf{\color{oxygenpurple} P-value resolution is limited by the number of rotations}}\\
 \vfill
-Top detected sets are all have the same p-values \\
+\uncover<3-4>{Top detected sets are all have the same p-values}\\
 \vfill
-P-values for each set may vary from run to run\\
+\uncover<4>{P-values for each set may vary from run to run}\\
 \vfill
-\includegraphics[width=1\textwidth]{figures/roast_table}
+\visible<2-4>{\begin{minipage}{1.4\textheight}
+\includegraphics[width=1.1\textwidth]{figures/roast_table_short2}
+\end{minipage}}
 \end{frame}
 
 \begin{frame}
 \frametitle{Improved Features with Fry}
 Assumes equal gene-wise variances\\
 \vfill
- \textbf{\color{oxygenpurple} Produces high-resolution exact p-values unlike roast}\\
+ \uncover<2-5>{Gene level statistics are standardized using posterior gene variances} \\
 \vfill
-Therefore gene level statistics are standardized using posterior gene variances \\
+  \uncover<3-5>{\textbf{\color{oxygenpurple} Produces high-resolution exact p-values unlike roast}}\\
 \vfill
-Computationally very efficient\\
+\uncover<4-5>{Top detected sets are all have different p-values}\\
 \vfill
-\includegraphics[width=1\textwidth]{figures/fry_table}
+\uncover<5>{P-values for each set does not vary from run to run}\\
+\vfill
+\visible<3-5>{\begin{minipage}{1.4\textheight}
+\includegraphics[width=1.1\textwidth]{figures/fry_table_short2}
+\end{minipage}}
 \end{frame}
 
 \begin{frame}
-\frametitle{Fry Outperforms}
+\frametitle{Fry is computationally very efficient}
 \vfill
-\large\textbf{\color{oxygenpurple}Over 4000 pathways are tested simultaneously! Roast is rotated 10e4 times!}\\
+\large\textbf{\color{oxygenpurple}Over 4000 pathways are tested on an experiment with $15000+$ genes and $800+$ samples simultaneously! Roast is rotated $10e5$ times!}\\
 \vfill
 \includegraphics[width=1\textwidth]{figures/speed}
+\end{frame}
+
+\begin{frame}
+\frametitle{Impact of Outdated Gene Annotations}
+\vspace{0.2cm}
+A very recent and comprehensive study on analysis of the evolution of pathway knowledge and annotations showed that \textbf{\color{oxygenpurple}the use of outdated resources has strongly affected practical genomic analysis and recent literature.} 
+\vfill
+$67\%$ of $3,900$ publications we surveyed in 2015 referenced outdated software that captured only $26\%$ of biological processes and path-ways identified using current resources.
+\vfill
+The very popular DAVID tool, revised in January 2010! 
+\vfill
+\textbf{\color{oxygenrose}Remarkably, a total of 2,601 publications from 2015 $(67\%)$ cited severely outdated tools!}
+\vfill
+At least semiannual updates should be required, as major databases release several versions annually. To ensure reproducibil-ity, tools need to provide historical gene annotations. As an example of recommended practice, fry shiny tool is synchronized quarterly with the Ensembl database and maintains archived versions dating to 2011. Reliable up-to-date software allows researchers to make the best use of current knowl-edge of gene function and interrogate experimental data for scientific  discoveries.
+\vfill 
+\hfill
+\footnotesize Wadi \emph{et al.}, Nature(2016)
 \end{frame}
 
 \begin{frame}[plain,t]
