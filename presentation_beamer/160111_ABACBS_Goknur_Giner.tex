@@ -35,121 +35,122 @@ AB$^3$ACBS Conference, Brisbane, AU}
 \end{frame}
 
 \section{Introduction}
-\begin{frame}[c]
-	\frametitle{Differential Expression Analysis}
-	\vspace{0.2cm}
-\begin{columns}
-	\column{0.5\textwidth}
-	\textbf{\color{oxygenpurple} Extract mRNA and turn into cDNA}
-\begin{minipage}[c][0.35\textheight][c]{\linewidth}
-  \includegraphics[width=1\linewidth]{figures/de1_no_title}
-\end{minipage}
- 	\visible<2->{\textbf{\color{oxygenpurple} Sequence the fragments}
-\begin{minipage}[c][0.25\textheight][c]{\linewidth}
-  \centering
-  \includegraphics[width=0.7\linewidth]{figures/de2_no_title}
-\end{minipage}}
-	\visible<3->{
-	\textbf{\color{oxygenpurple} Align reads to the reference genome}
-\begin{minipage}[c][0.3\textheight][c]{\linewidth}
-  \includegraphics[width=1\linewidth]{figures/de3_no_title}
-\end{minipage}}
-	\column{0.5\textwidth}
- 	\visible<4->{
-	\textbf{\color{oxygenpurple} Gene counts and count matrix}
-\begin{minipage}[c][0.25\textheight][c]{\linewidth}
- 	\centering
-  \includegraphics[width=1.1\linewidth]{figures/de4_no_title}
-\end{minipage}}
- 	\visible<5->{
-	\textbf{\color{oxygenpurple} Differential expression analysis}
-\begin{minipage}[c][0.90\textwidth][c]{\linewidth}
-  	\centering
-  \includegraphics[width=0.95\linewidth]{figures/de5_no_title}
-\end{minipage}}
-\end{columns}
-\end{frame}
-
 % \begin{minipage}[pos][height][contentpos]{width} text \end{minipage} 
 % pos: c(center), t(top), b(bottom) control the vertical alignment
 % contentpos: c(center), t(top), b(bottom), s(spread)
 % width: width of the box
 \begin{frame}
-	\frametitle{A Collection of Genes}
+	\frametitle{Gene Sets \textbf{\color{oxygenrose} (Pathways)}}
+	\vspace{0.1cm}
+\begin{minipage}[t][0.9\textheight][b]{0.6\textwidth}
+\centering
+\textbf{\color{oxygenpurple} BCL2 Family Genes}
+\vspace{0.05cm}
+\vfill
+  \includegraphics[width=1\textwidth]{figures/bcl2}
+  \vfill
+\footnotesize \url{http://string-db.org}
+\end{minipage}
+\hspace{0.4cm}
+\visible<2>{
+\begin{minipage}[t][0.6\textheight][c]{0.3\textwidth}
+\vspace{0.1cm}
+\textbf{\color{oxygenpurple} Annotation Databases}
+\vfill
+  \includegraphics[width=1.2\textwidth]{figures/AnnotationDB}
+\end{minipage}}
+\end{frame}
+
+\section{Pathway Analysis}
+\begin{frame}
+	\frametitle{Gene Set Tests  \textbf{\color{oxygenrose} (Pathway Analysis)}}
+%	\only<1>{
+%	\begin{minipage}[t]{0.5\textwidth}
+%	\flushleft
+%	{\color{oxygenpurple}\textbf{DNA Microarray}}
+%	\includegraphics[width=0.7\textwidth]{figures/DNA_Microarray}
+%	\end{minipage}
+%	\hspace{0.2cm}
+%	\visible<2>{
+%	\begin{minipage}[t]{0.45\textwidth}
+%	\flushleft
+%	{\color{oxygenpurple}\textbf{RNA Sequencing}}
+%	\includegraphics[width=0.9\textwidth]{figures/RNA_Sequencing}
+%	\end{minipage}}}
+%\only<2>{
 \begin{columns}
 	\column{0.6\textwidth}
-\begin{minipage}[c][1\textheight][c]{1\columnwidth}
- 	\centering
-  \includegraphics[width=1\columnwidth]{figures/bcl2}
+	\textbf{\color{oxygenpurple} Differential expression analysis}
+\begin{minipage}[c][1.1\textwidth][c]{\linewidth}
+  	\centering
+  \includegraphics[width=1\linewidth]{figures/de5_no_title}
 \end{minipage}
 	\column{0.4\textwidth}
-	\visible<2->{
-\begin{minipage}[c][1\textheight][c]{0.9\columnwidth}
-\textbf{\color{oxygenpurple} Annotation Databases}
- 	\centering
-  \includegraphics[width=1\columnwidth]{figures/AnnotationDB}
+	\visible<2-3>{
+	\textbf{\color{oxygenpurple} Annotation Databases}
+\begin{minipage}[t][0.4\textheight]{\linewidth}
+\vspace{0.1cm}
+  \includegraphics[width=0.6\linewidth]{figures/AnnotationDB}
 \end{minipage}}
-\end{columns}
+\visible<3>{
+\textbf{\color{oxygenpurple} Type of Tests}
+\begin{minipage}[t][0.5\textheight]{\linewidth}
+ \textbf{\color{oxygenrose} Self-Contained$^*$} \\
+  Tests the given pathway\\
+ \\
+ \textbf{\color{oxygenrose}Competitive$^*$}\\
+ Ranks all of the pathways\\
+ \\
+\hfill $^*$\footnotesize Goeman \emph{et al.},  Bioinformatics (2007)
+\end{minipage}}
+\end{columns}	
+%}
 \end{frame}
 
 \begin{frame}[c]
 \frametitle{Existing Methods}
+\begin{minipage}[t]{0.45\textwidth}
+\flushleft
+\textbf{\color{oxygenpurple}Over Representation Analysis (ORA)}
+\vspace{0.1cm}
+\begin{itemize}
+\item Onto-Express(2001)
+\item GeneMerge(2002)
+\item DAVID(2003) 
+\item GoMiner(2003)
+\item FatiGO(2004)
+\item GOstat(2004)
+\end{itemize}
+\end{minipage}
+\hspace{0.4cm}
+\begin{minipage}[t]{0.45\textwidth}
+\flushleft
+\textbf{\color{oxygenpurple}Functional Class Scoring (FCS)}
+\vspace{0.1cm}
+\begin{itemize}
+\item GlobalTest(2004)
+\item GSEA(2005)
+\item sigPathway(2005)
+\item SAFE(2005)
+\item Category(2007)
+\item SAM-GS(2007)
+\item Roast(2010)
+\item Camera(2012)
+\end{itemize}
+\end{minipage}
+\vfill
+\hfill $^*$\footnotesize Khatri \emph{et al.},  PLoS Comput Biol (2012)
+\end{frame}
+
+\begin{frame}[c]
+\frametitle{Impact of Outdated Gene Annotations}
+\textbf{\color{oxygenpurple}In 2015, $67\%$ of $3,900$ publications referenced outdated software that captured only $26\%$ of biological processes and pathways identified using current resources}
 	 \centering
 	 \vfill
 	 \includegraphics[width=1\textwidth]{figures/tools}
+	 \vfill
+	 \hfill \footnotesize Wadi \emph{et al.},  Nature Methods (2016)
 \end{frame}
-
-%\begin{frame}
-%	\frametitle{Gene Set Tests}
-%	\vspace{2cm}
-%	{\color{oxygenpurple}\textbf{Biologists want to:}}\\
-%	\vspace{0.4cm}
-%\begin{itemize}
-%	\item Assemble a summary of the most enriched biology
-%	\item Understand if the biological pathway of interest is changed in a given experiment
-%\end{itemize}
-%\end{frame}
-
-\begin{frame}
-\frametitle{Null Hypotheses in Gene Set Tests}
-\begin{itemize}
-	\item Self-Contained
-	\item Competitive
-\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Input Sources for Gene Set Tests}
-	\vspace{0.1cm}
-	\begin{minipage}[t]{0.3\textwidth}
-	\centering
-	{\color{oxygenpurple}\textbf{DNA Microarray}}
-	\includegraphics[width=1\textwidth]{figures/DNA_Microarray}
-	\end{minipage}
-	\hspace{0.4cm}
-	\begin{minipage}[t]{0.3\textwidth}
-	\centering
-	{\color{oxygenpurple}\textbf{RNA Sequencing}}
-	\vspace{-0.5cm}
-	\includegraphics[width=1\textwidth]{figures/RNA_Sequencing}
-	\end{minipage}
-	\hspace{0.2cm}
-	\begin{minipage}[t]{0.3\textwidth}
-	\centering
-	{\color{oxygenpurple}\textbf{Pathway Databases}}
-	\vspace{-0.5cm}
-	\includegraphics[width=0.6\textwidth]{figures/databases}
-	\end{minipage}
-\end{frame}
-
-\begin{frame}
-\frametitle{Test Methods}
-		\begin{itemize}
-		\item Over Representation
-		\item Functional Class Scoring
-		\end{itemize}
-\end{frame}
-
 
 \begin{frame}
 	\frametitle{Assessment of Statistical Significance}
@@ -188,10 +189,11 @@ AB$^3$ACBS Conference, Brisbane, AU}
 	\end{columns}
 \end{frame}
 
+\section{Breast Cancer Example}
 \begin{frame}
 	\frametitle{Exploring Biological Processes in Breast Cancer}
 	\centering
-	\includegraphics[width=0.8\textwidth]{figures/breast_cancer_experiment}
+	\includegraphics[width=0.78\textwidth]{figures/breast_cancer_experiment}
 \end{frame}
 
 \begin{frame}
@@ -232,6 +234,7 @@ Limitations when analysing large collections of sets\\
 \end{minipage}}
 \end{frame}
 
+\section{Why Fry}
 \begin{frame}
 \frametitle{Improved Features with Fry}
 Assumes equal gene-wise variances\\
@@ -263,23 +266,15 @@ Assumes equal gene-wise variances\\
 \includegraphics[width=1.2\textheight]{figures/power1}
 \end{figure}
 \end{frame}
-\begin{frame}
-\frametitle{Impact of Outdated Gene Annotations}
-\vspace{0.2cm}
-A very recent and comprehensive study on analysis of the evolution of pathway knowledge and annotations showed that \textbf{\color{oxygenpurple}the use of outdated resources has strongly affected practical genomic analysis and recent literature.} 
-\vfill
-$67\%$ of $3,900$ publications we surveyed in 2015 referenced outdated software that captured only $26\%$ of biological processes and path-ways identified using current resources.
-\vfill
-The very popular DAVID tool, revised in January 2010! 
-\vfill
-\textbf{\color{oxygenrose}Remarkably, a total of 2,601 publications from 2015 $(67\%)$ cited severely outdated tools!}
-\vfill
-At least semiannual updates should be required, as major databases release several versions annually. To ensure reproducibil-ity, tools need to provide historical gene annotations. As an example of recommended practice, fry shiny tool is synchronized quarterly with the Ensembl database and maintains archived versions dating to 2011. Reliable up-to-date software allows researchers to make the best use of current knowl-edge of gene function and interrogate experimental data for scientific  discoveries.
-\vfill 
-\hfill
-\footnotesize Wadi \emph{et al.}, Nature(2016)
-\end{frame}
 
+\section{Fry Shiny Application}
+\begin{frame}
+\frametitle{Fry outperforms Roast}
+\begin{figure}
+\includegraphics[width=1.2\textheight]{figures/power1}
+\end{figure}
+\end{frame}
+\section{Acknowledgement}
 \begin{frame}[plain,t]
 	\vspace{0.7cm}
 	\textbf{\huge{Acknowledgements}}\\
