@@ -22,10 +22,10 @@
   {}
 }
 
-\title{FRY: A Fast Approximation to ROAST Gene Set Test with Mean Aggregated Set Statistics}
+\title{{\ttfamily FRY}: A Fast Approximation to {\ttfamily ROAST} Gene Set Test with Mean Aggregated Set Statistics}
 \author[G\"{o}knur Giner]{G\"{o}knur Giner}
 \date[November 1st, 2016]{November 1st, 2016,\\
-AB$^3$ACBS Conference, Brisbane, AU}
+AB$^3$ACBS Conference, Brisbane}
 
 
 \begin{document}
@@ -40,22 +40,25 @@ AB$^3$ACBS Conference, Brisbane, AU}
 % contentpos: c(center), t(top), b(bottom), s(spread)
 % width: width of the box
 \begin{frame}
-	\frametitle{Gene Sets \textbf{\color{oxygenrose} (Pathways)}}
+	\frametitle{Gene sets \textbf{\color{oxygenrose} (Pathways)}}
 	\vspace{0.1cm}
 \begin{minipage}[t][0.9\textheight][b]{0.6\textwidth}
-\centering
+\flushleft
 \textbf{\color{oxygenpurple} BCL2 Family Genes}
 \vspace{0.05cm}
 \vfill
   \includegraphics[width=1\textwidth]{figures/bcl2}
-  \vfill
-\footnotesize \url{http://string-db.org}
+\vfill
+\flushleft
+\footnotesize{Adams JM and Cory S, Science (1998)} 
+\flushleft
+\footnotesize{\url{http://string-db.org}}
 \end{minipage}
 \hspace{0.4cm}
 \visible<2>{
 \begin{minipage}[t][0.6\textheight][c]{0.3\textwidth}
 \vspace{0.1cm}
-\textbf{\color{oxygenpurple} Annotation Databases}
+\textbf{\color{oxygenpurple} Annotation databases}
 \vfill
   \includegraphics[width=1.2\textwidth]{figures/AnnotationDB}
 \end{minipage}}
@@ -63,7 +66,7 @@ AB$^3$ACBS Conference, Brisbane, AU}
 
 \section{Pathway Analysis}
 \begin{frame}
-	\frametitle{Gene Set Tests  \textbf{\color{oxygenrose} (Pathway Analysis)}}
+	\frametitle{Gene set tests  \textbf{\color{oxygenrose} (Pathway analysis)}}
 %	\only<1>{
 %	\begin{minipage}[t]{0.5\textwidth}
 %	\flushleft
@@ -80,7 +83,7 @@ AB$^3$ACBS Conference, Brisbane, AU}
 %\only<2>{
 \begin{columns}
 	\column{0.6\textwidth}
-	\textbf{\color{oxygenpurple} Differential expression analysis}
+	\textbf{\color{oxygenpurple} Differential Expression Analysis}
 \begin{minipage}[c][1.1\textwidth][c]{\linewidth}
   	\centering
   \includegraphics[width=1\linewidth]{figures/de5_no_title}
@@ -108,19 +111,27 @@ AB$^3$ACBS Conference, Brisbane, AU}
 \end{frame}
 
 \begin{frame}[c]
-\frametitle{Existing Methods}
+\frametitle{Pathway analysis tools}
 \begin{minipage}[t]{0.45\textwidth}
 \flushleft
 \textbf{\color{oxygenpurple}Over Representation Analysis (ORA)}
 \vspace{0.1cm}
 \begin{itemize}
 \item Onto-Express(2001)
+\item[]
 \item GeneMerge(2002)
+\item[]
 \item DAVID(2003) 
+\item[]
 \item GoMiner(2003)
+\item[]
 \item FatiGO(2004)
+\item[]
 \item GOstat(2004)
+\item[]
 \end{itemize}
+\vfill
+\hfill $^*$\footnotesize Khatri \emph{et al.},  PLoS Comput Biol (2012)
 \end{minipage}
 \hspace{0.4cm}
 \begin{minipage}[t]{0.45\textwidth}
@@ -129,34 +140,37 @@ AB$^3$ACBS Conference, Brisbane, AU}
 \vspace{0.1cm}
 \begin{itemize}
 \item GlobalTest(2004)
+\item[]
 \item GSEA(2005)
+\item[]
 \item sigPathway(2005)
+\item[]
 \item SAFE(2005)
+\item[]
 \item Category(2007)
-\item SAM-GS(2007)
-\item Roast(2010)
+\item[]
+\item {\ttfamily ROAST}(2010)
+\item[]
 \item Camera(2012)
 \end{itemize}
 \end{minipage}
-\vfill
-\hfill $^*$\footnotesize Khatri \emph{et al.},  PLoS Comput Biol (2012)
 \end{frame}
 
-\begin{frame}[c]
-\frametitle{Impact of Outdated Gene Annotations}
-\textbf{\color{oxygenpurple}In 2015, $67\%$ of $3,900$ publications referenced outdated software that captured only $26\%$ of biological processes and pathways identified using current resources}
-	 \centering
-	 \vfill
-	 \includegraphics[width=1\textwidth]{figures/tools}
-	 \vfill
-	 \hfill \footnotesize Wadi \emph{et al.},  Nature Methods (2016)
-\end{frame}
+%\begin{frame}[c]
+%\frametitle{Impact of Outdated Gene Annotations}
+%\textbf{\color{oxygenpurple}In 2015, $67\%$ of $3,900$ publications referenced outdated software that captured only $26\%$ of biological processes and pathways identified using current resources}
+%	 \centering
+%	 \vfill
+%	 \includegraphics[width=1\textwidth]{figures/tools}
+%	 \vfill
+%	 \hfill \footnotesize Wadi \emph{et al.},  Nature Methods (2016)
+%\end{frame}
 
 \begin{frame}
-	\frametitle{Assessment of Statistical Significance}
+	\frametitle{Statistical significance of a test \textbf{\color{oxygenrose}(P-value calculation)}}
 	\vspace{0.1cm}
 	\begin{columns}
-	\column{0.5\textwidth}	
+	\column{0.53\textwidth}	
 	\centering
     \textbf{\color{oxygenpurple} Permutation Tests}
 	\vbox to 0.5\textheight
@@ -164,117 +178,129 @@ AB$^3$ACBS Conference, Brisbane, AU}
 	\vspace{0.02\textwidth}
 	%\vspace{0.1cm}
 	\centering
-    \includegraphics[width=0.7\textwidth]{figures/permutation}                
+    \includegraphics[width=0.62\textwidth]{figures/permutation}                
 	\vspace{0.02cm}
 	\begin{itemize}
-		\item Require large number of samples 
+		\item Require a large number of samples 
 		\item[]
-		\item Applicable to limited type of experimental design
+		\item Applicable to the limited type of experimental design
 		\item[]
-		\item GSEA is based on permutation test
+		\item GSEA$^*$ is based on permutation test
 		\end{itemize}
-    }                       
-	\column{0.5\textwidth}
+		\vfill
+	 \flushleft $^*$\footnotesize Subramanian \emph{et al.},  PNAS (2005)
+	 }                       
+	\column{0.47\textwidth}
 	\centering
 	{\color{oxygenpurple}\textbf{Rotation Tests}}
 	\begin{itemize}
-	\item Can produce unlimited number of rotated test statistics
+	\item Produce unlimited number of rotated test statistics
 	\item[]
-	\item Applicable to complex arbitrary experimental designs
+	\item Applicable to the complex arbitrary experimental designs
 	\item[]	
-	\item Roast: Rotation gene set tests for complex microarray experiments
+	\item {\ttfamily ROAST}$^{**}$ applies rotations 
 	\end{itemize}
 	\vspace{0.02cm}
 	\includegraphics[width=0.6\textwidth]{figures/rotation}
+	\vfill
+	$^{**}$\footnotesize Wu D. \emph{et al.},  Bioinformatics (2010)
 	\end{columns}
 \end{frame}
 
-\section{Breast Cancer Example}
+\section{{\ttfamily ROAST} and {\ttfamily FRY}}
 \begin{frame}
-	\frametitle{Exploring Biological Processes in Breast Cancer}
+	\frametitle{Exploring biological processes in breast cancer}
 	\centering
 	\includegraphics[width=0.78\textwidth]{figures/breast_cancer_experiment}
 \end{frame}
 
 \begin{frame}
-\frametitle{Barcode Plot}
-\begin{minipage}[t][][b]{0.45\textwidth}	
-	\begin{itemize}
-		\item Both bi-directional
-		\uncover<2-5>{\item[]
-		\item Both applicable to arbitrary designs
-		\item[]}
-		\uncover<3-5>{
-		\item Both work well with small sample sizes
-		\item[]}
-		\uncover<4-5>{
-		\item Roast uses floor mean, mean50, mean square and mean to aggregate gene set level statistics
-		\item[]}
-		\uncover<5>{
-		\item Fry uses only mean to aggregate gene level statistics}
-	\end{itemize}
-\end{minipage}
-\begin{minipage}[t][][b]{0.54\textwidth}
-	\includegraphics[width=1.1\textwidth]{figures/barcode_plot}
-\end{minipage}
-\end{frame}
-
-\begin{frame}
-\frametitle{Downsides of Roast}
-Limitations when analysing large collections of sets\\
+\frametitle{Limitations of {\ttfamily ROAST}}
+Slow performance while analysing large collections of sets\\
 \vfill
  \uncover<2-4>{\textbf{\color{oxygenpurple} P-value resolution is limited by the number of rotations}}\\
 \vfill
 \uncover<3-4>{Top detected sets are all have the same p-values}\\
 \vfill
-\uncover<4>{P-values for each set may vary from run to run}\\
+\uncover<4>{P-values for each set may slightly vary from run to run}\\
 \vfill
 \visible<2-4>{\begin{minipage}{1.4\textheight}
 \includegraphics[width=1.1\textwidth]{figures/roast_table_short2}
 \end{minipage}}
 \end{frame}
 
-\section{Why Fry}
 \begin{frame}
-\frametitle{Improved Features with Fry}
-Assumes equal gene-wise variances\\
+\frametitle{Improved features with {\ttfamily FRY}}
+Fast performance while analysing large collections of sets for large experiments\\
 \vfill
- \uncover<2-5>{Gene level statistics are standardized using posterior gene variances} \\
+\uncover<2-4>{\textbf{\color{oxygenpurple} Produces high-resolution exact p-values}}\\
 \vfill
-  \uncover<3-5>{\textbf{\color{oxygenpurple} Produces high-resolution exact p-values unlike roast}}\\
+\uncover<3-4>{Top detected sets are all have different p-values}\\
 \vfill
-\uncover<4-5>{Top detected sets are all have different p-values}\\
+\uncover<4>{P-values for each set does not change from run to run}\\
 \vfill
-\uncover<5>{P-values for each set does not vary from run to run}\\
-\vfill
-\visible<3-5>{\begin{minipage}{1.4\textheight}
+\visible<2-4>{\begin{minipage}{1.4\textheight}
 \includegraphics[width=1.1\textwidth]{figures/fry_table_short2}
 \end{minipage}}
 \end{frame}
 
+
 \begin{frame}
-\frametitle{Fry is computationally very efficient}
+\frametitle{Shared features of {\ttfamily ROAST} and {\ttfamily FRY}}
+\begin{minipage}[t][][b]{0.5\textwidth}
+\flushleft
+\textbf{\color{oxygenpurple} Barcode Plot}
+	\includegraphics[width=1.1\textwidth]{figures/barcode_plot1}
+\end{minipage}
+\hspace{0.3cm}
+\begin{minipage}[t][][b]{0.45\textwidth}	
+	\begin{itemize}
+		\item Both are bi-directional
+		\uncover<2-3>{\item[]
+		\item Both are applicable to arbitrary designs
+		\item[]}
+		\uncover<3>{
+		\item Both work well with small sample sizes}
+	\end{itemize}
+\end{minipage}
+\end{frame}
+
+\section{Benchmarking}
+\begin{frame}
+\frametitle{{\ttfamily FRY} approximates {\ttfamily ROAST}}
+\vspace{2cm}
+\begin{itemize}
+\item Assuming that \textbf{\color{oxygenpurple}gene-wise variances are equal}
+\item[]
+\item Aggregating gene level statistics by \textbf{\color{oxygenpurple}averaging}
+\item[] 
+\item Standardising gene level statistics by \textbf{\color{oxygenpurple}posterior gene variances}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{{\ttfamily FRY} is computationally very efficient}
 \vfill
-\large\textbf{\color{oxygenpurple}Over 4000 pathways are tested on an experiment with $15000+$ genes and $800+$ samples of TCGA Breast carcinoma simultaneously! Roast is rotated $10e5$ times!}\\
+\large\textbf{\color{oxygenpurple}Over 4000 pathways} are tested on \textbf{\color{oxygenpurple}$800+$ samples} of TCGA Breast carcinoma simultaneously! Number of rotation while running {\ttfamily ROAST} was \textbf{\color{oxygenpurple}$10e5$ times}\\
 \vfill
 \includegraphics[width=1\textwidth]{figures/speed}
 \end{frame}
 
 \begin{frame}
-\frametitle{Fry outperforms Roast}
+\frametitle{Reduced false discovery rates with {\ttfamily FRY}}
 \begin{figure}
 \includegraphics[width=1.2\textheight]{figures/power1}
 \end{figure}
 \end{frame}
 
-\section{Fry Shiny Application}
+\section{{\ttfamily FRY} Shiny Application}
 \begin{frame}
-\frametitle{Fry outperforms Roast}
+\frametitle{{\ttfamily FRY}: Fast Biological Pathway Miner}
 \begin{figure}
 \includegraphics[width=1.2\textheight]{figures/power1}
 \end{figure}
 \end{frame}
-\section{Acknowledgement}
+
 \begin{frame}[plain,t]
 	\vspace{0.7cm}
 	\textbf{\huge{Acknowledgements}}\\
@@ -285,7 +311,7 @@ Assumes equal gene-wise variances\\
 	\vspace{0.20cm}
 	
 	\textbf{Gordon K. Smyth}\\
-	Guido Pacini\\
+	Andy Chen\\
 	\vspace{0.35cm}
 	
 	{\color{oxygenpurple}\textbf{WEHI Population Health \\and Immunity}}\\
